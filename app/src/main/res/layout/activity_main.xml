@@ -4,15 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@mipmap/back"
+        android:alpha="0.6"
+        android:layout_height="match_parent">
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="161dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="637dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/custom_button"
+        android:alpha="0.9"
+        android:shadowRadius="@android:integer/status_bar_notification_info_maxnum"
+        android:text="Get Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="108dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="275dp"
+        android:layout_marginBottom="665dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0.9"
+        app:srcCompat="@mipmap/logo" />
 
 </android.support.constraint.ConstraintLayout>

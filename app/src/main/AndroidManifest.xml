@@ -7,12 +7,24 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project"
+        android:theme="@style/Theme.AppCompat.DayNight"
         tools:targetApi="31">
+        <activity
+            android:name=".AdminUi"
+            android:exported="false" />
+        <activity
+            android:name=".UserUi"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
