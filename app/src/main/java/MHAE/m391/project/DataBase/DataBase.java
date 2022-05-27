@@ -50,16 +50,6 @@ public class DataBase extends SQLiteOpenHelper {
         return "DONE";
     }
 
-
-    String SQL="CREATE TABLE IF NOT EXISTS Users ("+
-            "Id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-            "Name TEXT NOT NULL," +
-            "Age INTEGER NOT NULL, " +
-            "Email TEXT NOT NULL," +
-            "Phone TEXT NOT NULL," +
-            "Password TEXT NOT NULL," +
-            "Admin INTEGER NOT NULL);";
-
     public ArrayList<User> Get(){
         ArrayList<User>arrayList=new ArrayList<>();
         SQLiteDatabase db=this.getReadableDatabase();
@@ -98,6 +88,17 @@ public class DataBase extends SQLiteOpenHelper {
         return  "NOT a User";
     }
 
+    public String ForgetPassword(String Name,String Email,String Phone,int Age){
+        SQLiteDatabase db=this.getReadableDatabase();
+        String SQL="SELECT * FROM Users WHERE Email = ? AND Name = ? AND Phone = ?";
+        Cursor cursor=db.rawQuery(SQL,new String[]{Email,Name,Phone});
+        if(cursor.getCount()>0){
+            cursor.moveToFirst();
+            if(cursor.getInt(2)==Age) return cursor.getString(5);
+            else return "NOT";
+        }
+        return "NOT";
+    }
 
 
 

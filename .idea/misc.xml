@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/custom_textview.xml" value="0.129" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.129" />
         <entry key="app/src/main/res/layout/activity_admin_ui.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.22" />
