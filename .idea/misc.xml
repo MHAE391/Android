@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.129" />
         <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.129" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.129" />
+        <entry key="app/src/main/res/layout/activity_add_new_room.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_admin_ui.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_change_user_information.xml" value="0.1" />
@@ -20,7 +21,9 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_register_new_admin.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_user_ui.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_admin_ui_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_user_ui_about.xml" value="0.2" />

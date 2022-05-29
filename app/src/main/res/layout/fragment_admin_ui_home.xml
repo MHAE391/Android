@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminUiHomeFragment">
+
+<ImageButton
+android:id="@+id/BookRoom"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:background="@drawable/ic_baseline_home_24"
+android:layout_marginStart="70dp"
+android:layout_marginTop="200dp"
+tools:ignore="SpeakableTextPresentCheck" />
+
+<ImageButton
+android:id="@+id/addNewAdmin"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginStart="220dp"
+android:layout_marginTop="200dp"
+android:background="@drawable/ic_baseline_admin_panel_settings_24"
+tools:ignore="SpeakableTextPresentCheck" />
+
+<ImageButton
+android:id="@+id/UserSetting"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginStart="70dp"
+android:layout_marginTop="340dp"
+android:background="@drawable/ic_baseline_settings_24"
+tools:ignore="SpeakableTextPresentCheck" />
+
+<ImageButton
+android:id="@+id/AddNewRoom"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:layout_marginStart="220dp"
+android:layout_marginTop="340dp"
+android:background="@drawable/ic_baseline_add_home_work_24"
+tools:ignore="SpeakableTextPresentCheck" />
+
+</FrameLayout>
