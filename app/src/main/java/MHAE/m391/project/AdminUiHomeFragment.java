@@ -80,6 +80,12 @@ public class AdminUiHomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(),AddNewRoom.class));
             }
         });
+        view.findViewById(R.id.BookRoom).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),DisplayAllRooms.class));
+            }
+        });
         return view;
     }
 }

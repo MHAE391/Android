@@ -14,10 +14,11 @@
         android:theme="@style/Theme.AppCompat.DayNight"
         tools:targetApi="31">
         <activity
+            android:name=".DisplayAllRooms"
+            android:exported="false" />
+        <activity
             android:name=".AddNewRoom"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".RegisterNewAdmin"
             android:exported="false" />

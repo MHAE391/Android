@@ -50,7 +50,7 @@ public class DataBase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String SQL="DROP TABLE  IF EXISTS Users ;";
-        String SQL2="DROP TABLE  IF EXISTS Rooms ;";
+        String SQL2="DROP TABLE  IF EXISTS HotelRoom ;";
         db.execSQL(SQL);
         db.execSQL(SQL2);
         onCreate(db);
@@ -155,7 +155,6 @@ public class DataBase extends SQLiteOpenHelper {
     }
 
 
-
     public String InsertRoom(String Name,int Price,int Taken,int Number,int TotalRating,String Description){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues values=new ContentValues();
@@ -164,7 +163,7 @@ public class DataBase extends SQLiteOpenHelper {
         values.put("Taken",Taken);
         values.put("RoomNumber",Number);
         values.put("RoomDescription",Description);
-        values.put("TotalRating",TotalRating);
+        values.put("Total",TotalRating);
         long x= db.insert("HotelRoom",null,values);
         if(x==-1)return "NOT";
         return "DONE";

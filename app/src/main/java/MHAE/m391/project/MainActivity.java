@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         getStart =(Button) findViewById(R.id.start);
-       // DataBase x=new DataBase (this);
-        //x.Insert("ali amir","ali@gmail.com","12345","01013001808",30,1);
         getStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -2,12 +2,16 @@ package MHAE.m391.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Locale;
+
+import MHAE.m391.project.DataBase.Data;
 import MHAE.m391.project.DataBase.DataBase;
 
 public class AddNewRoom extends AppCompatActivity {
@@ -31,10 +35,12 @@ public class AddNewRoom extends AppCompatActivity {
                 if(name.length()==0 || price.length()==0 || description.length() == 0){
                     Toast.makeText(AddNewRoom.this, "Please Fill All Inputs", Toast.LENGTH_SHORT).show();
                 }else {
-                    DataBase x=new DataBase(AddNewRoom.this);
-                    String y=x.InsertRoom(name,Integer.parseInt(price),0,0,0,description);
-                    if(y.equals("Done")){
+                    Data x=new Data(AddNewRoom.this);
+                    String Y=x.InsertRoom(name.toLowerCase(),Integer.parseInt(price),0,0,0,description.toLowerCase());
+                    if(Y.equals("DONE")){
                         Toast.makeText(AddNewRoom.this,"Added Successfully",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AddNewRoom.this,AdminUi.class));
+                        finish();
                     }
                 }
             }

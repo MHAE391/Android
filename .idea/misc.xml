@@ -17,12 +17,14 @@
         <entry key="app/src/main/res/layout/activity_admin_ui.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_change_user_information.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_display_all_rooms.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_register_new_admin.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_user_ui.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/display.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_admin_ui_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.1" />
