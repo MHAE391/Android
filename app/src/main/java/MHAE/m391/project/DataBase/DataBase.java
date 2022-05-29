@@ -13,6 +13,16 @@ public class DataBase extends SQLiteOpenHelper {
     public DataBase(Context context){
         super(context,DataBaseName,null,1);
     }
+    private static String LoginUserEmail;
+
+    public static String getLoginUserEmail() {
+        return LoginUserEmail;
+    }
+
+    public void setLoginUserEmail(String loginUserEmail) {
+        this.LoginUserEmail = loginUserEmail;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -82,6 +92,7 @@ public class DataBase extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(SQL,new String[]{Email,Password});
         if(cursor.getCount()>0){
             cursor.moveToFirst();
+            setLoginUserEmail(Email);
             if(cursor.getInt(6)==0) return "User";
             else return "Admin";
         }
@@ -100,6 +111,37 @@ public class DataBase extends SQLiteOpenHelper {
         return "NOT";
     }
 
-
+    public User GetProfile(){
+        SQLiteDatabase db=this.getReadableDatabase();
+        String SQL="SELECT * FROM Users WHERE Email = ?";
+        Cursor cursor = db.rawQuery(SQL,new String[]{this.LoginUserEmail});
+            cursor.moveToFirst();
+            int Id =cursor.getInt(0);
+            String Name=cursor.getString(1);
+            int Age= cursor.getInt(2);
+            String Email = cursor.getString(3);
+            String Phone  = cursor.getString(4);
+            String Password =  cursor.getString(5);
+            int Admin  =  cursor.getInt(6);
+            User x=new User(Id,Name,Age,Email,Phone,Password,Admin);
+            return x;
+    }
+    public void ChangePassword(String Email,String Password){
+        SQLiteDatabase db=this.getReadableDatabase();
+        ContentValues values=new ContentValues();
+        values.put("Password",Password);
+        db.update("Users",values,"Email=?",new String[]{Email});
+        setLoginUserEmail(Email);
+    }
+    public void ChangeInformation(String OldEmail,String Name,String NewEmail,String Phone,int Age){
+        SQLiteDatabase db=this.getReadableDatabase();
+        ContentValues values=new ContentValues();
+        values.put("Email",NewEmail);
+        values.put("Name",Name);
+        values.put("Age",Age);
+        values.put("Phone",Phone);
+        db.update("Users",values,"Email=?",new String[]{OldEmail});
+        this.setLoginUserEmail(NewEmail);
+    }
 
 }

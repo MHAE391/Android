@@ -11,9 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import MHAE.m391.project.DataBase.DataBase;
+import MHAE.m391.project.DataBase.User;
 
 public class login extends AppCompatActivity {
-
+public   static User LoginUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +57,12 @@ public class login extends AppCompatActivity {
                     DataBase x=new DataBase(login.this);
                     if(x.CheckUser(email.toString(),password.toString()).equals("User"))
                     {
+                        LoginUser = x.GetProfile();
                     startActivity(new Intent(login.this,UserUi.class));
                         Toast.makeText(login.this,"Successful Login",Toast.LENGTH_SHORT).show();
                         finish();
                     }else if(x.CheckUser(email.toString(),password.toString()).equals("Admin")){
+                        LoginUser=x.GetProfile();
                         startActivity(new Intent(login.this,AdminUi.class));
                         Toast.makeText(login.this,"Successful Login",Toast.LENGTH_SHORT).show();
                         finish();

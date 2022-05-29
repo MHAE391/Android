@@ -1,7 +1,13 @@
 package MHAE.m391.project;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -75,7 +81,19 @@ public class ForgetPassword extends AppCompatActivity {
                         if(Res.equals("NOT")){
                             Toast.makeText(ForgetPassword.this,"Not A User",Toast.LENGTH_SHORT).show();
                         }else {
-                            Toast.makeText(ForgetPassword.this,"Your Password = "+Res,Toast.LENGTH_SHORT).show();
+
+                            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+                                NotificationChannel notificationChannel=new NotificationChannel("ForgetPassword","ForgetPassword", NotificationManager.IMPORTANCE_HIGH);
+                                notificationChannel.setDescription("Forget Password");
+                                NotificationManager mn=getSystemService(NotificationManager.class);
+                                mn.createNotificationChannel(notificationChannel);
+                            }
+                            NotificationCompat.Builder   builder =new NotificationCompat.Builder(getBaseContext(),"ForgetPassword");
+                            builder.setSmallIcon(R.mipmap.logo).setContentTitle("Get Your Password").
+                                    setContentText("   Your Password : "+Res).setPriority(NotificationCompat.PRIORITY_MAX);
+                            NotificationManagerCompat Nf=NotificationManagerCompat.from(ForgetPassword.this);
+                            Nf.notify(1,builder.build());
+                            //Toast.makeText(ForgetPassword.this,"Your Password = "+Res,Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(ForgetPassword.this,login.class));
                             finish();
                         }
@@ -84,5 +102,7 @@ public class ForgetPassword extends AppCompatActivity {
                 }
         });
 
+}
+private void displayNotification(){
 }
 }
